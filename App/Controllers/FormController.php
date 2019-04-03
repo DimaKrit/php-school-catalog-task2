@@ -6,20 +6,27 @@ use App\Views\TemplateView;
 
 class FormController
 {
+
+	public $layout = __DIR__ . '/../../views/layout.php';
+
     public function index($params = [])
     {
-        // ...
 
-        return new TemplateView('view_name', [
-            'title' => 'My awesome page',
-            'forms' => [],// ...
-        ]);
+		$templateView = new TemplateView();
+
+		return $templateView->render('view_name', [
+			'title' => 'My awesome page',
+			'forms' => ['form_1'],
+		]);
     }
 
     public function view($params = [])
     {
-        echo 'Controller View';
+		$templateView = new TemplateView();
 
-        p($params);
+		return $templateView->render('view_name', [
+			'title' => 'My awesome page',
+			'forms' => ['form_2'],
+		]);
     }
 }
