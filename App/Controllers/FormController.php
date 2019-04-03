@@ -14,9 +14,8 @@ class FormController
 
 		$templateView = new TemplateView();
 
-		return $templateView->render('view_name', [
-			'title' => 'My awesome page',
-			'forms' => ['form_1'],
+		return $templateView->render('layout', [
+			'title' => 'My awesome page4',
 		]);
     }
 
@@ -24,9 +23,13 @@ class FormController
     {
 		$templateView = new TemplateView();
 
-		return $templateView->render('view_name', [
-			'title' => 'My awesome page',
-			'forms' => ['form_2'],
+		$content = $templateView->render('view_name', [
+			'forms' => ['form_1'],
+		] ,true);
+
+		return $templateView->render('layout', [
+			'title' => 'My awesome page4',
+			'content' => $content,
 		]);
     }
 }

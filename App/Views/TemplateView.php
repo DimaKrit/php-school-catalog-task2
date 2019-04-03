@@ -30,12 +30,10 @@ class TemplateView
 
 		require($template);
 
-		$content = ob_get_clean();
-
 		if ($return) {
-			return $content;
+			return ob_get_clean();
 		} else {
-			echo $content;
+			echo ob_get_clean();
 		}
 
 	}
